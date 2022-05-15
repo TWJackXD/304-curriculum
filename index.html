@@ -1,4 +1,38 @@
-<iframe frameborder="0" scrolling="no"
-     width="100%" height="100%"
-     src="https://drive.google.com/file/d/1ROHxyLcX5I5DAWtnu7P5d92JK3dMYzc_/preview">
+<title>304線上課程即時課表</title>
+
+<center><font size="5"><b><a id="timer"></a></font><b></center>
+
+<iframe frameborder="1" scrolling="no"
+     width="100%" height="95%" src="https://drive.google.com/file/d/1ROHxyLcX5I5DAWtnu7P5d92JK3dMYzc_/preview">
 </iframe>
+
+
+<script>
+function checklength(i) {
+    'use strict';
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+var minutes, seconds, count, counter, timer;
+count = 25; //seconds
+counter = setInterval(timer, 1000);
+
+function timer() {
+    'use strict';
+    count = count - 1;
+    minutes = checklength(Math.floor(count / 60));
+    seconds = checklength(count - minutes * 60);
+    if (count < 0) {
+        clearInterval(counter);
+        return;
+    }
+    document.getElementById("timer").innerHTML = '將在' +  seconds + '秒後更新，以確保資訊即時。';
+    if (count === 0) {
+        location.reload();
+    }
+}
+
+</script>
