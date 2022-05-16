@@ -15,7 +15,7 @@ function checklength(i) {
 }
 
 var minutes, seconds, count, counter, timer;
-count = 300; //seconds 記得改回26
+count = 360000; //seconds 記得改回26
 counter = setInterval(timer, 1000);
 
 function timer() {
@@ -27,12 +27,11 @@ function timer() {
         clearInterval(counter);
         return;
     }
-    document.getElementById("timer").innerHTML = '將在' +  minutes + '分' + seconds + '秒後更新，以確保資訊即時。（上課期間降速，避免資源問題）';
+    document.getElementById("timer").innerHTML = '（今日連結全數確認，關閉自動重整）';
     if (count === 0) {
         location.reload();
     }
 }
-
 </script>
 
 <style>
@@ -40,3 +39,39 @@ function timer() {
          background-color: rgb(209, 209, 209);
     }
 </style>
+
+
+<!--預設JavaScript:
+
+
+<script>
+function checklength(i) {
+    'use strict';
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+var minutes, seconds, count, counter, timer;
+count = 26; //seconds 記得改回26
+counter = setInterval(timer, 1000);
+
+function timer() {
+    'use strict';
+    count = count - 1;
+    minutes = checklength(Math.floor(count / 60));
+    seconds = checklength(count - minutes * 60);
+    if (count < 0) {
+        clearInterval(counter);
+        return;
+    }
+    document.getElementById("timer").innerHTML = '將在' + seconds + '秒後更新，以確保資訊即時。';
+    if (count === 0) {
+        location.reload();
+    }
+}
+</script>
+
+
+-->
