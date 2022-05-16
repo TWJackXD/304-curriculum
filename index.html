@@ -27,7 +27,7 @@ function timer() {
         clearInterval(counter);
         return;
     }
-    document.getElementById("timer").innerHTML = '將在' +  seconds + '秒後更新，以確保資訊即時。（上課期間降速，避免資源問題）';
+    document.getElementById("timer").innerHTML = '將在' +  minutes + '分' + seconds + '秒後更新，以確保資訊即時。（上課期間降速，避免資源問題）';
     if (count === 0) {
         location.reload();
     }
