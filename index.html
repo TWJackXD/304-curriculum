@@ -1,10 +1,50 @@
 <title>304線上課程即時課表</title>
 
 <center><font size="5"><b><a id="timer"></a></b></font><br>
-<a>此處顯示紅色時，請重新整理頁面：<iframe frameborder="no" scrolling="no" width="15" height="15" src="https://bit.ly/3MpnvhS"></iframe></a></center>
+<a>此處顯示紅色時，請手動重整頁面：<iframe frameborder="no" scrolling="no" width="15" height="15" src="https://bit.ly/3MpnvhS"></iframe></a></center>
 <iframe frameborder="no" scrolling="no" width="100%" height="87%" src="https://drive.google.com/file/d/1ROHxyLcX5I5DAWtnu7P5d92JK3dMYzc_/preview"></iframe>
 <center><span>網頁 by 30421 | 首次載入可能需較長時間（有問題請重新整理）</span></center>
 
+<script>
+function checklength(i) {
+    'use strict';
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+
+var minutes, seconds, count, counter, timer;
+count = 999999; //seconds
+counter = setInterval(timer, 1000);
+
+function timer() {
+    'use strict';
+    count = count - 1;
+    minutes = checklength(Math.floor(count / 60));
+    seconds = checklength(count - minutes * 60);
+    if (count < 0) {
+        clearInterval(counter);
+        return;
+    }
+    document.getElementById("timer").innerHTML = '今日連結已全數確認，關閉自動重整！';
+    if (count === 0) {
+        location.reload();
+    }
+}
+</script>
+
+<style>
+     html{
+         background-color: rgb(209, 209, 209);
+    }
+</style>
+
+
+
+<!--
+
+原JavaScript:
 <script>
 function checklength(i) {
     'use strict';
@@ -34,8 +74,5 @@ function timer() {
 }
 </script>
 
-<style>
-     html{
-         background-color: rgb(209, 209, 209);
-    }
-</style>
+
+-->
