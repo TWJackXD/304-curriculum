@@ -15,7 +15,7 @@ function checklength(i) {
 }
 
 var minutes, seconds, count, counter, timer;
-count = 999999; //seconds
+count = 26; //seconds
 counter = setInterval(timer, 1000);
 
 function timer() {
@@ -27,7 +27,7 @@ function timer() {
         clearInterval(counter);
         return;
     }
-    document.getElementById("timer").innerHTML = '今日連結已全數確認，關閉自動重整！';
+    document.getElementById("timer").innerHTML = '將在' + seconds + '秒後更新，以確保資訊即時。';
     if (count === 0) {
         location.reload();
     }
