@@ -1,7 +1,7 @@
 <title>304線上課程即時課表</title>
 
 <center><font size="5"><b><a id="timer"></a></b></font><br>
-<a>此處顯示紅色時，請手動重整頁面：<iframe frameborder="no" scrolling="no" width="15" height="15" src="https://bit.ly/3MpnvhS"></iframe></a></center>
+<a>此處顯示紅色時，仍需手動重整頁面一次：<iframe frameborder="no" scrolling="no" width="15" height="15" src="https://bit.ly/3MpnvhS"></iframe></a></center>
 <iframe frameborder="no" scrolling="no" width="100%" height="87%" src="https://drive.google.com/file/d/1ROHxyLcX5I5DAWtnu7P5d92JK3dMYzc_/preview"></iframe>
 <center><span>網頁 by 30421 | 首次載入可能需較長時間（有問題請重新整理）</span></center>
 
@@ -15,7 +15,7 @@ function checklength(i) {
 }
 
 var minutes, seconds, count, counter, timer;
-count = 26; //seconds
+count = 999999; //seconds
 counter = setInterval(timer, 1000);
 
 function timer() {
@@ -27,7 +27,7 @@ function timer() {
         clearInterval(counter);
         return;
     }
-    document.getElementById("timer").innerHTML = '將在' + seconds + '秒後更新，以確保資訊即時。';
+    document.getElementById("timer").innerHTML = '今日連結已全數確認，關閉自動重整！';
     if (count === 0) {
         location.reload();
     }
